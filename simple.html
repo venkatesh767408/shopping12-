@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('ecm2.jpg');
+        }
+
+        .container {
+            background-color: #ade5f6;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form-group label {
+            color: #666;
+            flex: 1;
+            text-align: left;
+        }
+
+        .form-group input {
+            flex: 2;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #aad9f6;
+            box-sizing: border-box;
+            margin-left: 10px;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            flex: 2; /* Changed the flex value */
+            width: auto;
+            margin: 0 auto; /* Center the button */
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="gmail">Gmail:</label>
+                <input type="email" id="gmail" name="gmail" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+        <div class="error-message" id="errorMessage"></div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value.trim();
+            var gmail = document.getElementById('gmail').value.trim();
+
+            if (!name || !gmail) {
+                document.getElementById('errorMessage').innerText = 'Please fill in all fields.';
+                return;
+            }
+
+            // Perform login logic here, e.g., send data to server, validate, etc.
+
+            // For demonstration, log the data to console
+            console.log('Name:', name);
+            console.log('Gmail:', gmail);
+
+            // Clear error message
+            document.getElementById('errorMessage').innerText = '';
+
+            // Optionally, redirect to another page
+            // window.location.href = 'welcome.html';
+            window.location.href = 'ecomerce.html';
+        });
+    </script>
+</body>
+
+</html>
